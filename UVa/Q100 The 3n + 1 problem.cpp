@@ -3,7 +3,7 @@ using namespace std;
 int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	long long max=0,i,j,k,t=0,a;
+	long long max = 0,i,j,k,t = 0,a;
 	while(cin >> i >> j){
 		max = 0;
 		cout << i << " " << j << " ";
