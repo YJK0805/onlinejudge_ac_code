@@ -12,8 +12,8 @@ int main(){
     	mp[s]++;
     	getline(cin,s);
     }
-    for(auto i : mp){
-    	cout << i.first << " " << i.second <<"\n";
+    for(auto &[i,j] : mp){
+    	cout << i << " " << j <<"\n";
     }
     return 0;
 }
