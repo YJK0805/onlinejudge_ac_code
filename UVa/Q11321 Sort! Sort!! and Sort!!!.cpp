@@ -1,38 +1,31 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-struct num{
-	long long a,b,r;
-};
-num a[10050];
-bool cmp(num a,num b){
-	if(a.r!=b.r){
-		return a.r<b.r;
-	}else if(a.b!=b.b){
-		return a.b<b.b;
-	}else if(a.b==1){
-		return a.a>b.a;
+long long n,m;
+bool cmp(long long a,long long b){
+	if(a % m != b % m){
+		return a % m < b % m;
 	}else{
-		return a.a<b.a;
+		if(abs(a) % 2 != abs(b) % 2){
+			return abs(a) % 2 > abs(b) % 2;
+		}else{
+			return abs(a) % 2 ? a > b : a < b;
+		}
 	}
 }
-int main() {
-	long long n,m;
-	while(cin>>n>>m&&n&&m){
-		for(int i=0;i<n;i++){
-			cin>>a[i].a;
-			if(a[i].a%2==0){
-				a[i].b=2;
-			}else{
-				a[i].b=1;
-			}
-			a[i].r=a[i].a%m;
-		}
-		sort(a,a+n,cmp);
-		cout<<n<<" "<<m<<"\n";
-		for(int i=0;i<n;i++){
-			cout<<a[i].a<<"\n";
-		}
-	}
-	cout<<0<<" "<<0<<"\n"; 
-	return 0;
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    while(cin >> n >> m && n && m){
+    	cout << n << " " << m << "\n";
+    	vector<long long> v(n);
+    	for(auto &i : v){
+    		cin >> i;
+    	}
+    	sort(v.begin(),v.end(),cmp);
+    	for(auto &i : v){
+    		cout << i << "\n";
+    	}
+    }
+    cout << n << " " << m << "\n";
+    return 0;
 }
