@@ -9,9 +9,7 @@ int main(){
     	long long b2 = 0,b1 = 0,n;
     	cin >> n;
     	for(int i = n;i > 0;i >>= 1){
-    		if(i & 1){
-    			b1++;
-    		}
+    		b1 += (i & 1);
     	}
     	long long num = 0,cnt = 1;
     	while(n){
@@ -20,9 +18,7 @@ int main(){
     		n /= 10;
     	}
     	for(int i = num;i > 0;i >>= 1){
-    		if(i & 1){
-    			b2++;
-    		}
+    		b2 += (i & 1);
     	}
     	cout << b1 << " " << b2 <<"\n";
     }

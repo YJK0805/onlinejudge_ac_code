@@ -5,11 +5,10 @@ int main(){
     cin.tie(0);
     long long t;
     cin >> t;
-    while (t--) {
+    while(t--){
         long long s,d;
         cin >> s >> d;
-        long long x = (s + d) / 2;
-        long long y = (s - d) / 2;
+        long long x = (s + d) / 2,y = (s - d) / 2;
         if((s + d) % 2 != 0 || (s - d) % 2 != 0 || x < y || x < 0 || y < 0){
             cout << "impossible" << endl;
         }else{
