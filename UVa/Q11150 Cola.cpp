@@ -11,7 +11,7 @@ int main(){
     		ans += n / 3;
     		n = n / 3 + n % 3;
     	}
-    	cout << ans <<"\n";
+    	cout << ans << "\n";
     }
     return 0;
 }
