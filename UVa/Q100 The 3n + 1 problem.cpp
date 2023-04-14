@@ -3,9 +3,9 @@ using namespace std;
 int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	long long max = 0,i,j,k,t = 0,a;
+	long long ans = 0,i,j,k,t = 0,a;
 	while(cin >> i >> j){
-		max = 0;
+		ans = 0;
 		cout << i << " " << j << " ";
 		if(i > j){
 			swap(i,j);
@@ -14,18 +14,12 @@ int main(){
 			t = 1;
 			a = k;
 			while(a != 1){
-				if(a % 2 == 0){
-					a /= 2;
-				}else if(a % 2 == 1){
-					a = 3 * a + 1;
-				}
+				(a % 2) ? a = 3 * a + 1 : a /= 2;
 				t++;
 			}
-			if(t > max){
-				max = t;
-			}
+			ans = max(ans,t);
 		}
-		cout << max << "\n";	
+		cout << ans << "\n";	
 	}
 	return 0;
 }
