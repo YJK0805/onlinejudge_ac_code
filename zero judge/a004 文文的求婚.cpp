@@ -5,11 +5,11 @@ int main(){
     while(cin>>y)
     if(y%4==0){
             if(y%400==0 or y%100!=0)
-            cout<<"¶|¦~"<<endl;
+            cout<<"ï¿½|ï¿½~"<<endl;
     else
-        cout<<"¥­¦~"<<endl;
+        cout<<"ï¿½ï¿½ï¿½~"<<endl;
     }
     else
-        cout<<"¥­¦~"<<endl;
+        cout<<"ï¿½ï¿½ï¿½~"<<endl;
 	return 0;
 }
