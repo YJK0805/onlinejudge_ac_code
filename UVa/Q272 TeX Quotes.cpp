@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-	long long a=1;
+	long long a = 1;
 	string s;
 	while(getline(cin,s)){
 		for(int i = 0;i < s.size();i++){

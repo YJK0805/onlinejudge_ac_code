@@ -1,14 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct NUM{
-	int c,count;
-};
-bool cmp(NUM a,NUM b){
-	if(a.count != b.count){
-		return a.count < b.count;
-	}else{
-		return a.c > b.c;
-	}
+bool cmp(pair<int,int> a,pair<int,int> b){
+	return a.first != b.first ? a.first < b.first : a.second > b.second;
 }
 int main(){
     ios::sync_with_stdio(0);
@@ -19,18 +12,17 @@ int main(){
     	if(t++){
     		cout <<"\n";
     	}
-    	NUM ans[128];
+    	vector<pair<int,int>> ans(128);
     	for(int i = 0;i < 128;i++){
-    		ans[i].c = i;
-    		ans[i].count = 0;
+    		ans[i] = {0,i};
     	}
     	for(int i = 0;i < s.size();i++){
-    		ans[int(s[i])].count++;
+    		ans[int(s[i])].first++;
     	}
-    	sort(ans,ans + 128,cmp);
+    	sort(ans.begin(),ans.end(),cmp);
     	for(int i = 0;i < 128;i++){
-    		if(ans[i].count){
-    			cout << ans[i].c << " " << ans[i].count <<"\n";
+    		if(ans[i].first){
+    			cout << ans[i].second << " " << ans[i].first <<"\n";
     		}
     	}
     }
